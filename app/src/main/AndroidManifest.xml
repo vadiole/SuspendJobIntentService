@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vadiole.suspendjobintentservice">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SuspendJobIntentService">
+        <activity android:name="vadiole.suspendjobintentservice.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <receiver android:name="vadiole.suspendjobintentservice.globalScope.TestReceiverGlobalScope" />
+
+        <service
+            android:name="vadiole.suspendjobintentservice.globalScope.TestServiceGlobalScope"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name="vadiole.suspendjobintentservice.runBlocking.TestReceiverRunBlocking" />
+
+        <service
+            android:name="vadiole.suspendjobintentservice.runBlocking.TestServiceRunBlocking"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+
+    </application>
+
+
+</manifest>
